@@ -1,6 +1,6 @@
-const { Queue } = require('bullmq');
+const { Queue } = require('bullmq');  // queue class from bullmq
 
-const notificationQueue = new Queue('email-queue');
+const notificationQueue = new Queue('email-queue');  // all jobs added to this queue will be processed by workers listening on this queue
 
 async function init() {
     const res = await notificationQueue.add("email to abhay", {
